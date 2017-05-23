@@ -1,0 +1,29 @@
+{
+  "name": "purescript-proxy",
+  "homepage": "https://github.com/purescript/purescript-proxy",
+  "description": "Value proxy for type inputs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-proxy.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "version": "2.0.0",
+  "_release": "2.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.0",
+    "commit": "7ba679ca26b402711bfb78dafbdf9fa7ef24cf5a"
+  },
+  "_source": "https://github.com/purescript/purescript-proxy.git",
+  "_target": "^2.0.0",
+  "_originalSource": "purescript-proxy"
+}

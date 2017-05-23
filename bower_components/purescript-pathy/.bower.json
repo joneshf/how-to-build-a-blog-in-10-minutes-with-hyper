@@ -1,0 +1,43 @@
+{
+  "name": "purescript-pathy",
+  "homepage": "https://github.com/slamdata/purescript-pathy",
+  "description": "A type-safe abstraction for platform-independent file paths",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/slamdata/purescript-pathy.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-console": "^3.0.0",
+    "purescript-exceptions": "^3.0.0",
+    "purescript-lists": "^4.0.0",
+    "purescript-partial": "^1.2.0",
+    "purescript-profunctor": "^3.0.0",
+    "purescript-strings": "^3.0.0",
+    "purescript-transformers": "^3.0.0",
+    "purescript-unsafe-coerce": "^3.0.0"
+  },
+  "devDependencies": {
+    "purescript-quickcheck": "^4.0.0",
+    "purescript-quickcheck-laws": "^3.0.0"
+  },
+  "version": "4.0.0",
+  "_release": "4.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.0.0",
+    "commit": "8712dde01d274a6b04646dd30f51a649645b6963"
+  },
+  "_source": "https://github.com/slamdata/purescript-pathy.git",
+  "_target": "^4.0.0",
+  "_originalSource": "purescript-pathy"
+}

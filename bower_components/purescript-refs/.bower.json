@@ -1,0 +1,32 @@
+{
+  "name": "purescript-refs",
+  "homepage": "https://github.com/purescript/purescript-refs",
+  "description": "Mutable value references",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-refs.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-eff": "^3.0.0"
+  },
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "b938bda8b07f89853a011136ec001ac993b041c8"
+  },
+  "_source": "https://github.com/purescript/purescript-refs.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-refs"
+}

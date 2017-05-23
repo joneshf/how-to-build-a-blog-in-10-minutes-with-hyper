@@ -1,0 +1,32 @@
+{
+  "name": "purescript-media-types",
+  "homepage": "https://github.com/purescript-contrib/purescript-media-types",
+  "description": "Internet media / content / MIME types",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript-contrib/purescript-media-types.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-generics": "^4.0.0"
+  },
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "7a504f2122259e3fdb11a4c5d6c630a92f156807"
+  },
+  "_source": "https://github.com/purescript-contrib/purescript-media-types.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-media-types"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "purescript-random",
+  "homepage": "https://github.com/purescript/purescript-random",
+  "description": "Random value generation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-random.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-eff": "^3.0.0",
+    "purescript-integers": "^3.0.0",
+    "purescript-math": "^2.0.0"
+  }
+}

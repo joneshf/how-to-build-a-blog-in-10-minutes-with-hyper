@@ -1,0 +1,39 @@
+{
+  "name": "purescript-profunctor",
+  "homepage": "https://github.com/purescript/purescript-profunctor",
+  "description": "Profunctor typeclass for PureScript",
+  "authors": [
+    "Hardy Jones <jones3.hardy@gmail.com>",
+    "Sean Chalmers <sclhiannan@gmail.com>",
+    "Phil Freeman <paf31@cantab.net>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-profunctor.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-distributive": "^3.0.0",
+    "purescript-either": "^3.0.0",
+    "purescript-tuples": "^4.0.0"
+  },
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "b4cff5e322df896188cbe282b3d80995369cdf9d"
+  },
+  "_source": "https://github.com/mankyKitty/purescript-profunctor.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-profunctor"
+}

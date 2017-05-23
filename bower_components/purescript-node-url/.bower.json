@@ -1,0 +1,28 @@
+{
+  "name": "purescript-node-url",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript-node/purescript-node-url.git"
+  },
+  "dependencies": {
+    "purescript-nullable": "^3.0.0"
+  },
+  "homepage": "https://github.com/purescript-node/purescript-node-url",
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "768ed6630cd28ae2e4de060d962ed523da1fbdf7"
+  },
+  "_source": "https://github.com/purescript-node/purescript-node-url.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-node-url"
+}

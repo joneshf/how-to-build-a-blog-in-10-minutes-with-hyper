@@ -1,0 +1,35 @@
+{
+  "name": "purescript-node-buffer",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript-node/purescript-node-buffer"
+  },
+  "dependencies": {
+    "purescript-eff": "^3.0.0",
+    "purescript-maybe": "^3.0.0"
+  },
+  "devDependencies": {
+    "purescript-assert": "^3.0.0",
+    "purescript-console": "^3.0.0",
+    "purescript-foldable-traversable": "^3.0.0"
+  },
+  "homepage": "https://github.com/purescript/purescript-node-buffer",
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "5d15790ed6a552bbe7afdf46a5f37ea15332658c"
+  },
+  "_source": "https://github.com/purescript/purescript-node-buffer.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-node-buffer"
+}

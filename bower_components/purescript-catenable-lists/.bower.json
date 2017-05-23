@@ -1,0 +1,40 @@
+{
+  "name": "purescript-catenable-lists",
+  "homepage": "https://github.com/purescript/purescript-catenable-lists",
+  "description": "Strict catenable lists",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-catenable-lists.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-lists": "^4.0.0",
+    "purescript-tuples": "^4.0.0",
+    "purescript-foldable-traversable": "^3.0.0",
+    "purescript-unfoldable": "^3.0.0",
+    "purescript-control": "^3.0.0"
+  },
+  "devDependencies": {
+    "purescript-assert": "^3.0.0",
+    "purescript-console": "^3.0.0"
+  },
+  "version": "4.0.0",
+  "_release": "4.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.0.0",
+    "commit": "da5091b9fcafe46284655336c66ee758e8e0e22c"
+  },
+  "_source": "https://github.com/purescript/purescript-catenable-lists.git",
+  "_target": "^4.0.0",
+  "_originalSource": "purescript-catenable-lists"
+}

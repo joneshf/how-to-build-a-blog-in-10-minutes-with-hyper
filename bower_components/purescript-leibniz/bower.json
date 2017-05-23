@@ -1,0 +1,25 @@
+{
+  "name": "purescript-leibniz",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paf31/purescript-leibniz.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "purescript-prelude": "^3.0.0",
+    "purescript-unsafe-coerce": "^3.0.0"
+  },
+  "devDependencies": {
+    "purescript-console": "^3.0.0",
+    "purescript-exists": "^3.0.0"
+  }
+}

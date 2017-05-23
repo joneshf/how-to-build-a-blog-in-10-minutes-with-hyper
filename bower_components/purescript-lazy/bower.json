@@ -1,0 +1,26 @@
+{
+  "name": "purescript-lazy",
+  "homepage": "https://github.com/purescript/purescript-lazy",
+  "authors": [
+    "Phil Freeman <paf31@cantab.net>",
+    "Gary Burgess <gary.burgess@gmail.com>",
+    "John A. De Goes <john@degoes.net>"
+  ],
+  "description": "Call-by-need values",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-lazy.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-monoid": "^3.0.0"
+  }
+}

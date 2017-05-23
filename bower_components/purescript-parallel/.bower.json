@@ -1,0 +1,38 @@
+{
+  "name": "purescript-parallel",
+  "description": "Type classes for parallel computation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-parallel.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-transformers": "^3.0.0",
+    "purescript-refs": "^3.0.0",
+    "purescript-functors": "^2.0.0"
+  },
+  "devDependencies": {
+    "purescript-console": "^3.0.0",
+    "purescript-functions": "^3.0.0"
+  },
+  "homepage": "https://github.com/paf31/purescript-parallel",
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "bbbf11268c51eb98806078a2ac0082bd042ce1dd"
+  },
+  "_source": "https://github.com/paf31/purescript-parallel.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-parallel"
+}

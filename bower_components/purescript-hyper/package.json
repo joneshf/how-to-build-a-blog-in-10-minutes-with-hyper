@@ -1,0 +1,19 @@
+{
+  "name": "purescript-hyper",
+  "description": "Type-safe, statically checked composition of HTTP servers",
+  "main": " ",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "pulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/owickstrom/hyper.git"
+  },
+  "author": "oskar.wickstrom@gmail.com",
+  "license": "MPL-2.0",
+  "homepage": "http://hyper.wickstrom.tech"
+}

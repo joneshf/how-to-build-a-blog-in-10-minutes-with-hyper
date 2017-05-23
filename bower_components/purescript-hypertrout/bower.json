@@ -1,0 +1,26 @@
+{
+  "name": "purescript-hypertrout",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/owickstrom/purescript-hypertrout.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^3.0.0",
+    "purescript-console": "^3.0.0",
+    "purescript-hyper": "^0.7.0",
+    "purescript-trout": "^0.8.0"
+  },
+  "devDependencies": {
+    "purescript-psci-support": "^3.0.0",
+    "purescript-spec": "^0.13.0",
+    "purescript-spec-discovery": "^0.5.0",
+    "purescript-argonaut-generic": "*"
+  }
+}

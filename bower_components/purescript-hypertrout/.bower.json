@@ -1,0 +1,37 @@
+{
+  "name": "purescript-hypertrout",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/owickstrom/purescript-hypertrout.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^3.0.0",
+    "purescript-console": "^3.0.0",
+    "purescript-hyper": "^0.7.0",
+    "purescript-trout": "^0.8.0"
+  },
+  "devDependencies": {
+    "purescript-psci-support": "^3.0.0",
+    "purescript-spec": "^0.13.0",
+    "purescript-spec-discovery": "^0.5.0",
+    "purescript-argonaut-generic": "*"
+  },
+  "homepage": "https://github.com/owickstrom/purescript-hyper-routing-server",
+  "version": "0.8.1",
+  "_release": "0.8.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.8.1",
+    "commit": "c60f9bb50ad9a948f0ed49f4e6aa94c49ffc9ab9"
+  },
+  "_source": "https://github.com/owickstrom/purescript-hyper-routing-server.git",
+  "_target": "^0.8.1",
+  "_originalSource": "purescript-hyper-routing-server"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "purescript-distributive",
+  "homepage": "https://github.com/purescript/purescript-distributive",
+  "description": "Distributive type class for PureScript",
+  "authors": [
+    "Hardy Jones <jones3.hardy@gmail.com> (https://github.com/joneshf)",
+    "John A. De Goes <john@degoes.net> (http://degoes.net)",
+    "Sean Chalmers <sclhiannan@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-distributive.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-identity": "^3.0.0"
+  },
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "379888b90ea737648a7e1ad1d9d01d11ecf071af"
+  },
+  "_source": "https://github.com/mankyKitty/purescript-distributive.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-distributive"
+}

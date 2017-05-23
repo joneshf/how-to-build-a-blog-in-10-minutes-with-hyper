@@ -1,0 +1,41 @@
+{
+  "name": "purescript-aff",
+  "homepage": "https://github.com/slamdata/purescript-aff",
+  "description": "Asynchronous effect monad",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/slamdata/purescript-aff.git"
+  },
+  "license": "Apache-2.0",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-console": "^3.0.0",
+    "purescript-exceptions": "^3.0.0",
+    "purescript-functions": "^3.0.0",
+    "purescript-parallel": "^3.0.0",
+    "purescript-transformers": "^3.0.0",
+    "purescript-unsafe-coerce": "^3.0.0",
+    "purescript-datetime": "^3.0.0"
+  },
+  "devDependencies": {
+    "purescript-partial": "^1.2.0"
+  },
+  "version": "3.1.0",
+  "_release": "3.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.1.0",
+    "commit": "2943766dcf3dd3d9a28461c001362aba2bd0d405"
+  },
+  "_source": "https://github.com/slamdata/purescript-aff.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-aff"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "purescript-functions",
+  "homepage": "https://github.com/purescript/purescript-functions",
+  "description": "Function combinators and types for uncurried multi-argument functions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-functions.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^3.0.0"
+  },
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "39479c2ba71d96aec3ddfb4bc5a467c88e586d18"
+  },
+  "_source": "https://github.com/purescript/purescript-functions.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-functions"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "hello-hyper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "blog": "pulp run -m Blog",
+    "build": "pulp --watch build",
+    "next-commit": "git reset --hard; git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout",
+    "prev-commit": "git reset --hard; git checkout HEAD^1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "pg": "^6.2.3",
+    "pulp": "^11.0.0",
+    "purescript": "^0.11.4"
+  }
+}

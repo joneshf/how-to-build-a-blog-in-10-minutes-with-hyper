@@ -1,0 +1,33 @@
+{
+  "name": "purescript-symbols",
+  "homepage": "https://github.com/purescript/purescript-symbols",
+  "description": "Utilities for working with type-level strings",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-symbols.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-unsafe-coerce": "^3.0.0",
+    "purescript-prelude": "^3.0.0"
+  },
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "55cdcc85569c80938a33e97ee8d3350be7a48e75"
+  },
+  "_source": "https://github.com/purescript/purescript-symbols.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-symbols"
+}

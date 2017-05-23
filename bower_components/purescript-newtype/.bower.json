@@ -1,0 +1,32 @@
+{
+  "name": "purescript-newtype",
+  "homepage": "https://github.com/purescript/purescript-newtype",
+  "description": "Type class and functions for working with newtypes",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-newtype.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^3.0.0"
+  },
+  "version": "2.0.0",
+  "_release": "2.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.0",
+    "commit": "5f0557944afe85e3e830be9a8df43522311326e8"
+  },
+  "_source": "https://github.com/garyb/purescript-newtype.git",
+  "_target": "^2.0.0",
+  "_originalSource": "purescript-newtype"
+}

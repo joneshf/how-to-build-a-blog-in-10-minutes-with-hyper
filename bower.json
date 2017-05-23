@@ -1,0 +1,20 @@
+{
+  "name": "hello-hyper",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^3.0.0",
+    "purescript-console": "^3.0.0",
+    "purescript-hyper": "^0.7.3",
+    "purescript-hypertrout": "purescript-hyper-routing-server#^0.8.1",
+    "purescript-argonaut-generic": "^1.0.0",
+    "purescript-postgresql-client": "^1.0.0"
+  },
+  "devDependencies": {
+    "purescript-psci-support": "^3.0.0"
+  }
+}

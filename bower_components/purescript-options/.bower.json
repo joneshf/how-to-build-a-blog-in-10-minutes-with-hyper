@@ -1,0 +1,39 @@
+{
+  "name": "purescript-options",
+  "homepage": "https://github.com/ethul/purescript-options",
+  "description": "PureScript Options",
+  "keywords": [
+    "purescript"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ethul/purescript-options.git"
+  },
+  "ignore": [
+    "*",
+    "!src/**/*",
+    "!LICENSE"
+  ],
+  "dependencies": {
+    "purescript-foreign": "^4.0.0",
+    "purescript-maps": "^3.0.0",
+    "purescript-tuples": "^4.0.0",
+    "purescript-monoid": "^3.0.0",
+    "purescript-maybe": "^3.0.0",
+    "purescript-contravariant": "^3.0.0"
+  },
+  "devDependencies": {
+    "purescript-console": "^3.0.0"
+  },
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "7d625787c5d23884d3cae2dd0e0bc19b2f9a6cc8"
+  },
+  "_source": "https://github.com/ethul/purescript-options.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-options"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "purescript-eff",
+  "homepage": "https://github.com/purescript/purescript-eff",
+  "description": "The Eff monad, for handling native side effects",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-eff.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^3.0.0"
+  },
+  "version": "3.1.0",
+  "_release": "3.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.1.0",
+    "commit": "06d02be3a92c1e60f665573aff9dbf23b6587cd1"
+  },
+  "_source": "https://github.com/purescript/purescript-eff.git",
+  "_target": "^3.0.0",
+  "_originalSource": "purescript-eff"
+}

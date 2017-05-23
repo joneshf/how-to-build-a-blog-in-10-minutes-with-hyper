@@ -1,0 +1,32 @@
+{
+  "name": "purescript-indexed-monad",
+  "homepage": "https://github.com/garyb/purescript-indexed-monad",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/garyb/purescript-indexed-monad.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-eff": "^3.1.0",
+    "purescript-aff": "^3.0.0",
+    "purescript-transformers": "^3.2.0"
+  },
+  "version": "0.2.0",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.0",
+    "commit": "2786138fe52b4445a42cb3cddbcc0144a092441a"
+  },
+  "_source": "https://github.com/garyb/purescript-indexed-monad.git",
+  "_target": "^0.2.0",
+  "_originalSource": "purescript-indexed-monad"
+}

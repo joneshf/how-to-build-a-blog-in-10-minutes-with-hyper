@@ -1,0 +1,31 @@
+{
+  "name": "purescript-argonaut-traversals",
+  "homepage": "https://github.com/purescript-contrib/purescript-argonaut-traversals",
+  "authors": [
+    "Maxim Zimaliev <zimaliev@yandex.ru>",
+    "Hardy Jones <>",
+    "John A. De Goes <john@degoes.net>"
+  ],
+  "description": "Prisms, traversals, and zipper for the Argonaut `Json` type.",
+  "keywords": [
+    "purescript",
+    "json",
+    "argonaut",
+    "prisms",
+    "traversals",
+    "zipper"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript-contrib/purescript-argonaut-traversals.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "purescript-argonaut-core": "^3.1.0",
+    "purescript-argonaut-codecs": "^3.0.0",
+    "purescript-profunctor-lenses": "^3.0.0"
+  },
+  "devDependencies": {
+    "purescript-strongcheck": "^3.0.0"
+  }
+}
