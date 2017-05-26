@@ -6,6 +6,9 @@
   "scripts": {
     "blog": "pulp run -m Blog",
     "build": "pulp --watch build",
+    "postgres-createdb": "psql -U postgres -tAc \"SELECT 1 FROM pg_database WHERE datname='blog'\" | grep -q 1 || createdb -U blog --echo blog",
+    "postgres-createuser": "psql -U postgres -tAc \"SELECT 1 FROM pg_roles WHERE rolname='blog'\" | grep -q 1 || createuser -U postgres --echo --createdb blog",
+    "postgres-migrate": "psql -U blog -f db/migrate.sql",
     "next-commit": "git reset --hard; git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout",
     "prev-commit": "git reset --hard; git checkout HEAD^1"
   },
