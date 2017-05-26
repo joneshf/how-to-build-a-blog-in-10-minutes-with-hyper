@@ -1,13 +1,15 @@
 module Blog.Post where
 
+import Control.Bind (discard)
 import Control.Semigroupoid ((<<<))
 import Data.Function (($))
 import Data.Functor (map)
 import Data.Generic (class Generic)
 import Data.Newtype (class Newtype, unwrap, wrap)
-import Data.Tuple.Nested (type (/\), get1, get2)
+import Data.Tuple.Nested (type (/\), get1, get2, get3)
 import Data.Unit (Unit)
 import Database.PostgreSQL (class FromSQLRow, Query(..), fromSQLRow)
+import Post.Body (Body)
 import Post.Title (Title)
 import Scaffold.Destroy (class EncodeDestroy, encodeDestroy)
 import Scaffold.Edit (class EncodeEdit, encodeEdit)
@@ -17,7 +19,7 @@ import Scaffold.Id (class GetId, Id)
 import Scaffold.New (class EncodeNew, encodeNew)
 import Scaffold.SQL (class Columns, class Table, columns)
 import Scaffold.Show (class EncodeShow, encodeShow)
-import Text.Smolder.HTML (h1, header, section)
+import Text.Smolder.HTML (h1, header, p, section)
 import Type.Proxy (Proxy(..))
 import Type.Trout.ContentType.HTML (class EncodeHTML, encodeHTML)
 
@@ -26,6 +28,7 @@ newtype Post
 
 type Fields
   = Title
+  /\ Body
   /\ Unit
 
 derive instance genericPost :: Generic Post
@@ -56,6 +59,8 @@ instance encodeHTMLPost :: EncodeHTML Post where
       header do
         h1 do
           encodeHTML $ get2 $ unwrap post
+      p do
+        encodeHTML $ get3 $ unwrap post
 
 instance encodeNewPost :: EncodeNew Post where
   encodeNew = encodeNew <<< proxyMap unwrap

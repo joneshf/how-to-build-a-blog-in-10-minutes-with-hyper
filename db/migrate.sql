@@ -2,3 +2,5 @@ CREATE TABLE IF NOT EXISTS post (
   id serial PRIMARY KEY,
   title text NOT NULL
 );
+
+ALTER TABLE post ADD COLUMN IF NOT EXISTS body text NOT NULL DEFAULT '';

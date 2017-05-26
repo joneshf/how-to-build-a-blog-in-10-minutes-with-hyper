@@ -28,6 +28,7 @@ var Hyper_Response = require("../Hyper.Response");
 var Hyper_Status = require("../Hyper.Status");
 var Hyper_Trout_Router = require("../Hyper.Trout.Router");
 var Node_HTTP = require("../Node.HTTP");
+var Post_Body = require("../Post.Body");
 var Post_Title = require("../Post.Title");
 var Scaffold = require("../Scaffold");
 var Scaffold_Form = require("../Scaffold.Form");
@@ -107,11 +108,11 @@ var main = (function () {
                 return "POST";
             }))(Type_Trout_ContentType_HTML.allMimeRenderHTML(Blog_Post.encodeHTMLPost))))(new Data_Symbol.IsSymbol(function () {
                 return "blog";
-            }))))(blog)(Scaffold_Server.server(Blog_Post.columnsPost)(Blog_Post.fromSQLRowPost)(Control_Monad_Aff_Class.monadAffExceptT(Control_Monad_Aff_Class.monadAffAff))(Control_Monad_Except_Trans.monadThrowExceptT(Control_Monad_Aff.monadAff))(Blog_Post.tablePost)(Database_PostgreSQL.toSQLRowTuple(Post_Title.toSQLValueTitle)(Database_PostgreSQL.toSQLRowUnit))(conn)(fields))(onRoutingError);
+            }))))(blog)(Scaffold_Server.server(Blog_Post.columnsPost)(Blog_Post.fromSQLRowPost)(Control_Monad_Aff_Class.monadAffExceptT(Control_Monad_Aff_Class.monadAffAff))(Control_Monad_Except_Trans.monadThrowExceptT(Control_Monad_Aff.monadAff))(Blog_Post.tablePost)(Database_PostgreSQL.toSQLRowTuple(Post_Title.toSQLValueTitle)(Database_PostgreSQL.toSQLRowTuple(Post_Body.toSQLValueBody)(Database_PostgreSQL.toSQLRowUnit)))(conn)(fields))(onRoutingError);
         };
     };
     var server = function (conn) {
-        return Control_IxMonad.ibind(Hyper_Middleware.ixMonadMiddleware(Control_Monad_Aff.monadAff))(Scaffold_Form.parseFromForm(Control_Monad_Aff.monadAff)(Hyper_Node_Server.requestHttpRequest(Control_Monad_Aff.monadAff))(Hyper_Node_Server.requestBodyReaderReqestBody(Control_Monad_Aff.monadAff)(Control_Monad_Aff_Class.monadAffAff))(Scaffold_Form.fromFormTuple(Post_Title.fromFormTitle)(Scaffold_Form.fromFormUnit)))(server$prime(conn));
+        return Control_IxMonad.ibind(Hyper_Middleware.ixMonadMiddleware(Control_Monad_Aff.monadAff))(Scaffold_Form.parseFromForm(Control_Monad_Aff.monadAff)(Hyper_Node_Server.requestHttpRequest(Control_Monad_Aff.monadAff))(Hyper_Node_Server.requestBodyReaderReqestBody(Control_Monad_Aff.monadAff)(Control_Monad_Aff_Class.monadAffAff))(Scaffold_Form.fromFormTuple(Post_Title.fromFormTitle)(Scaffold_Form.fromFormTuple(Post_Body.fromFormBody)(Scaffold_Form.fromFormUnit))))(server$prime(conn));
     };
     return Data_Functor["void"](Control_Monad_Eff.functorEff)(Control_Monad_Aff.launchAff(Control_Bind.bind(Control_Monad_Aff.bindAff)(Database_PostgreSQL.newPool(poolConfiguration))(function (v) {
         return Database_PostgreSQL.withConnection(v)(function (conn) {
