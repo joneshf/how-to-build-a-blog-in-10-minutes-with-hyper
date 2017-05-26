@@ -1,0 +1,1 @@
+{"efVersion":"0.11.4","efModuleName":["Scaffold","Query"],"efExports":[],"efImports":[{"eiModule":["Prim"],"eiImportType":{"Implicit":[]},"eiImportedAs":null}],"efFixities":[],"efTypeFixities":[],"efDeclarations":[],"efSourceSpan":{"start":[1,1],"name":"/var/folders/gz/2r3cqpy510527dn257qzqv340000gn/T/flycheck32242qXM/Query.purs","end":[1,23]}}
