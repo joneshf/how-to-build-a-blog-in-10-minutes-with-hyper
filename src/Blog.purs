@@ -1,14 +1,21 @@
 module Blog where
 
-import Blog.Post (Post, Fields)
+import Blog.Comment as Blog.Comment
+import Blog.Post as Blog.Post
+import Scaffold as Scaffold
+import Scaffold.Server as Scaffold.Server
+import Blog.Comment (Comment)
+import Blog.Post (Post)
 import Control.Bind (bind)
 import Control.IxMonad ((:*>), (:>>=))
 import Control.Monad.Aff (Aff, launchAff)
 import Control.Monad.Aff.AVar (AVAR)
+import Control.Monad.Aff.Class (class MonadAff)
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Class (liftEff)
 import Control.Monad.Eff.Console (CONSOLE)
 import Control.Monad.Eff.Exception (EXCEPTION)
+import Control.Monad.Error.Class (class MonadThrow)
 import Data.Either (Either)
 import Data.Foldable (fold)
 import Data.Function (($))
@@ -18,16 +25,17 @@ import Data.MediaType.Common (textHTML)
 import Data.Unit (Unit)
 import Database.PostgreSQL (Connection, POSTGRESQL, PoolConfiguration, newPool, withConnection)
 import Hyper.Conn (Conn)
+import Hyper.Form (Form, parseForm)
 import Hyper.Middleware (Middleware)
 import Hyper.Node.Server (HttpRequest, HttpResponse, defaultOptionsWithLogging, runServer)
 import Hyper.Response (ResponseEnded, StatusLineOpen, closeHeaders, contentType, respond, writeStatus)
 import Hyper.Status (Status)
-import Hyper.Trout.Router (router)
+import Hyper.Trout.Router (RoutingError, router)
 import Node.HTTP (HTTP)
-import Scaffold (Scaffold)
-import Scaffold.Form (parseFromForm)
-import Scaffold.Server as Scaffold.Server
+import Scaffold (Scaffold, CollectionApi)
+import Scaffold.Form (fromForm)
 import Type.Proxy (Proxy(..))
+import Type.Trout (type (:<|>), (:<|>))
 
 type Server e c =
   Middleware
@@ -53,10 +61,21 @@ main = void $ launchAff do
     :*> respond (fold msg)
   server :: forall e. Connection -> Server e {}
   server conn =
-    parseFromForm :>>= server' conn
-  server' :: forall e. Connection -> Either String Fields -> Server e {}
-  server' conn fields =
-    router blog (Scaffold.Server.server conn fields) onRoutingError
+    parseForm :>>= server' conn
+  server' :: forall e. Connection -> Either String Form -> Server e {}
+  server' conn form =
+    router blog (handlers conn form) onRoutingError
+  handlers
+    :: forall e m
+    . MonadAff (console :: CONSOLE, postgreSQL :: POSTGRESQL | e) m
+    => MonadThrow RoutingError m
+    => Connection
+    -> Either String Form
+    -> Scaffold.Server "post" m Post Comment
+      :<|> Scaffold.Collection "post" m Post Comment
+  handlers conn form =
+    Scaffold.Server.server conn (bind form fromForm :: Either String Blog.Post.Fields)
+    :<|> Scaffold.Server.createElement conn (bind form fromForm :: Either String Blog.Comment.Fields)
 
 poolConfiguration :: PoolConfiguration
 poolConfiguration =
@@ -69,7 +88,9 @@ poolConfiguration =
   , user : "blog"
   }
 
-type Blog = Scaffold "blog" Post
+type Blog
+  = Scaffold "post" Post Comment
+  :<|> CollectionApi "post" Post Comment
 
 blog :: Proxy Blog
 blog = Proxy

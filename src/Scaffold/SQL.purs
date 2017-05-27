@@ -25,11 +25,24 @@ instance columnsUnit :: Columns Unit where
 instance columnsTuple :: (Columns a, Columns b) => Columns (Tuple a b) where
   columns _ = columns (Proxy :: Proxy a) <> columns (Proxy :: Proxy b)
 
+class ForeignKey row id | row -> id where
+  foreignKey :: row -> id
+  foreignKey' :: Proxy row -> String
+
 index :: forall a row. Table row => Query a row
 index = Query $ "SELECT * FROM " <> table (Proxy :: Proxy row)
 
 show :: forall row. Table row => Query Id row
 show = Query $ "SELECT * FROM " <> table (Proxy :: Proxy row) <> " WHERE id = $1"
+
+collection :: forall row id . ForeignKey row id => Table row => Query id row
+collection =
+  Query
+    $ "SELECT * FROM "
+    <> table (Proxy :: Proxy row)
+    <> " WHERE "
+    <> foreignKey' (Proxy :: Proxy row)
+    <> " = $1"
 
 create :: forall a row. Columns row => Table row => Query a row
 create =

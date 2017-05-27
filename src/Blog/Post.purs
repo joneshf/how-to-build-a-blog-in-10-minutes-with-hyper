@@ -1,15 +1,16 @@
 module Blog.Post where
 
+import Blog.Types.Body (Body)
 import Control.Bind (discard)
 import Control.Semigroupoid ((<<<))
 import Data.Function (($))
 import Data.Functor (map)
 import Data.Generic (class Generic)
 import Data.Newtype (class Newtype, unwrap, wrap)
+import Data.Tuple (snd)
 import Data.Tuple.Nested (type (/\), get1, get2, get3)
 import Data.Unit (Unit)
 import Database.PostgreSQL (class FromSQLRow, Query(..), fromSQLRow)
-import Post.Body (Body)
 import Post.Title (Title)
 import Scaffold.Destroy (class EncodeDestroy, encodeDestroy)
 import Scaffold.Edit (class EncodeEdit, encodeEdit)
@@ -18,7 +19,7 @@ import Scaffold.Header (class EncodeHeader, encodeHeader)
 import Scaffold.Id (class GetId, Id)
 import Scaffold.New (class EncodeNew, encodeNew)
 import Scaffold.SQL (class Columns, class Table, columns)
-import Scaffold.Show (class EncodeShow, encodeShow)
+import Scaffold.Show (class EncodeShow)
 import Text.Smolder.HTML (h1, header, p, section)
 import Type.Proxy (Proxy(..))
 import Type.Trout.ContentType.HTML (class EncodeHTML, encodeHTML)
@@ -39,31 +40,31 @@ instance columnsPost :: Columns Post where
   columns _ = columns (Proxy :: Proxy Fields)
 
 instance encodeDestroyPost :: EncodeDestroy Post where
-  encodeDestroy = encodeDestroy <<< unwrap
+  encodeDestroy = encodeDestroy <<< fields
 
 instance encodeEditPost :: EncodeEdit Post where
-  encodeEdit = encodeEdit <<< unwrap
+  encodeEdit = encodeEdit <<< fields
 
 instance encodeShowPost :: EncodeShow Post where
-  encodeShow = encodeShow <<< unwrap
+  encodeShow = encodeHTML
 
 instance encodeFieldPost :: EncodeField Post where
-  encodeField = encodeField <<< unwrap
+  encodeField = encodeField <<< fields
 
 instance encodeHeaderPost :: EncodeHeader Post where
-  encodeHeader = encodeHeader <<< proxyMap unwrap
+  encodeHeader _ = encodeHeader $ Proxy :: Proxy Fields
 
 instance encodeHTMLPost :: EncodeHTML Post where
   encodeHTML post =
     section do
       header do
         h1 do
-          encodeHTML $ get2 $ unwrap post
+          encodeHTML $ title post
       p do
-        encodeHTML $ get3 $ unwrap post
+        encodeHTML $ body post
 
 instance encodeNewPost :: EncodeNew Post where
-  encodeNew = encodeNew <<< proxyMap unwrap
+  encodeNew _ = encodeNew $ Proxy :: Proxy Fields
 
 instance fromSQLRowPost :: FromSQLRow Post where
   fromSQLRow = map wrap <<< fromSQLRow
@@ -73,6 +74,15 @@ instance getIdPost :: GetId Post where
 
 instance tablePost :: Table Post where
   table _ = "post"
+
+fields :: Post -> Fields
+fields = snd <<< unwrap
+
+title :: Post -> Title
+title = get2 <<< unwrap
+
+body :: Post -> Body
+body = get3 <<< unwrap
 
 -- TODO: Make PRs for these types to implement all of the typeclasses they can.
 proxyMap :: forall a b. (a -> b) -> Proxy a -> Proxy b

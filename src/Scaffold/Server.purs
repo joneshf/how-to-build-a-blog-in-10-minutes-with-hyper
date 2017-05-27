@@ -17,22 +17,25 @@ import Data.Unit (unit)
 import Database.PostgreSQL (class FromSQLRow, class ToSQLRow, Connection, POSTGRESQL, query)
 import Hyper.Status (status, statusNotFound)
 import Hyper.Trout.Router (RoutingError(HTTPError))
-import Scaffold (Create, Destroy, Index(Index), New(New), Server, CRUD)
+import Scaffold (CRUD, CollectionShow, Create, Destroy, Index(Index), New(New), Server)
 import Scaffold.Id (Id)
-import Scaffold.SQL (class Columns, class Table)
+import Scaffold.SQL (class Columns, class ForeignKey, class Table)
 import Type.Trout ((:<|>))
 
 server
-  :: forall a e m fields name
+  :: forall a b e m fields name
   . Columns a
+  => ForeignKey b Id
   => FromSQLRow a
+  => FromSQLRow b
   => MonadAff (console :: CONSOLE, postgreSQL :: POSTGRESQL | e) m
   => MonadThrow RoutingError m
   => Table a
+  => Table b
   => ToSQLRow fields
   => Connection
   -> Either String fields
-  -> Server name m a
+  -> Server name m a b
 server conn fields =
   index conn
   :<|> crud conn fields
@@ -49,21 +52,42 @@ index
 index conn = liftAff $ Index <$> query conn Scaffold.SQL.index unit
 
 crud
-  :: forall a e m fields name
+  :: forall a b e m fields name
   . Columns a
+  => ForeignKey b Id
   => FromSQLRow a
+  => FromSQLRow b
   => MonadAff (console :: CONSOLE, postgreSQL :: POSTGRESQL | e) m
   => MonadThrow RoutingError m
   => Table a
+  => Table b
   => ToSQLRow fields
   => Connection
   -> Either String fields
-  -> CRUD name m a
+  -> CRUD name m a b
 crud conn fields id =
-  (wrap <$> get conn id)
+  collection conn fields id
   :<|> (wrap <$> get conn id)
   :<|> update conn id fields
   :<|> destroy conn id
+
+collection
+  :: forall a b e m fields name
+  . ForeignKey b Id
+  => FromSQLRow a
+  => FromSQLRow b
+  => MonadAff (console :: CONSOLE, postgreSQL :: POSTGRESQL | e) m
+  => MonadThrow RoutingError m
+  => Table a
+  => Table b
+  => Connection
+  -> Either String fields
+  -> Id
+  -> m (CollectionShow name a b)
+collection conn fields id = do
+  elements <- liftAff $ wrap <$> query conn Scaffold.SQL.collection id
+  shown <- wrap <$> get conn id
+  pure $ wrap (elements /\ shown)
 
 get
   :: forall a e m
@@ -87,6 +111,25 @@ get conn id = do
 
 new :: forall a f name. Applicative f => f (New name a)
 new = pure New
+
+createElement
+  :: forall a b e m fields name
+  . Columns b
+  => ForeignKey b Id
+  => FromSQLRow a
+  => FromSQLRow b
+  => MonadAff (console :: CONSOLE, postgreSQL :: POSTGRESQL | e) m
+  => MonadThrow RoutingError m
+  => Table a
+  => Table b
+  => ToSQLRow fields
+  => Connection
+  -> Either String fields
+  -> Id
+  -> m (CollectionShow name a b)
+createElement conn fields id = do
+  _ <- create conn fields :: Create m b
+  collection conn fields id
 
 create
   :: forall a e m fields

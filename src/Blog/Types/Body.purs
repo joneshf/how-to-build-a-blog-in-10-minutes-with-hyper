@@ -1,4 +1,4 @@
-module Post.Body where
+module Blog.Types.Body where
 
 import Control.Applicative (pure)
 import Control.Bind (discard)
@@ -51,7 +51,7 @@ instance encodeFieldBody :: EncodeField Body where
     truncate :: Body -> Body
     truncate (Body str) =
       if length str > 20 then
-        Body $ take 20 str <> "…"
+        Body $ take 20 str <> "..."
       else
         Body str
 
